@@ -1,0 +1,12 @@
+---
+
+language: "python"
+python: "3.6"
+before_install: "pip install poetry codecov"
+install: "poetry install --verbose"
+script:
+  - "pytest --verbose --cov=csvblend tests"
+  - "prospector csvblend"
+  - "black --check csvblend"
+  - "isort --recursive --check-only csvblend"
+  - "codecov"
