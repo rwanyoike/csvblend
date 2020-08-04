@@ -5,7 +5,7 @@ description = "Join or merge multiple CSVs."
 license = "MIT"
 authors = ["Raymond Wanyoike <raymond.wanyoike@gmail.com>"]
 readme = "README.md"
-repository = "https://github.com/rwanyoike/csvblend"
+repository = "https://github.com/rwanyoike/csvblend-python-library"
 include = ["HISTORY.md"]
 
 [tool.poetry.dependencies]

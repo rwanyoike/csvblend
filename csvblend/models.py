@@ -101,7 +101,7 @@ class MergeFiles(contextlib.AbstractContextManager):
         if self._merge_count != 0:
             self.affected_count += cursor.rowcount
         self._merge_count += 1
-        cursor = csvblend.count_values(self._connection, self._table)
+        cursor = csvblend.select_count(self._connection, self._table)
         self.rowcount = cursor.fetchone()[0]
 
     def rows(self):
