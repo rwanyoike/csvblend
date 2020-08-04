@@ -4,6 +4,7 @@ import contextlib
 import csv
 import logging
 import os
+import sqlite3
 import tempfile
 import timeit
 
@@ -22,6 +23,11 @@ class MergeFiles(contextlib.AbstractContextManager):
         :param list indexes: The list of indexes.
         :param str db: (optional) The database file database.
         """
+        if sqlite3.sqlite_version_info < (3, 24, 0):
+            raise Exception(
+                f"SQLite 3.24.0 (2018-06-04) or later is required (found "
+                f"{sqlite3.sqlite_version})"
+            )
         if not isinstance(columns, (list, tuple)):
             raise ValueError("columns should be a list or tuple")
         if not isinstance(indexes, (list, tuple)):
