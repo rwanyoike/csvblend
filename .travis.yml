@@ -1,5 +1,6 @@
 ---
 
+dist: "focal"  # sqlite3 v3.31.1
 language: "python"
 python: "3.6"
 before_install: "pip install poetry codecov"

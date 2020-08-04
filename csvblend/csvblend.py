@@ -74,7 +74,7 @@ def insert_values(connection, table, columns, indexes, values):
             WHERE ({update_columns}) != ({update_bindings})
         """
     else:
-        query += f"""
+        query += """
             DO NOTHING
         """
     query += ";"
