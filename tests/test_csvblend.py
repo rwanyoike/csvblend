@@ -117,7 +117,7 @@ def test_select_values(tmp_path: Path):
     assert cursor.fetchall() == test_values
 
 
-def test_count_values(tmp_path: Path):
+def test_select_count(tmp_path: Path):
     test_database = tmp_path / "test.db"
     connection = sqlite3.connect(str(test_database))
     connection.execute(f"""
@@ -127,6 +127,6 @@ def test_count_values(tmp_path: Path):
         INSERT INTO {test_table} ("first_name", "last_name", "score")
         VALUES (?, ?, ?);
     """, test_values)
-    cursor = csvblend.count_values(connection, test_table)
+    cursor = csvblend.select_count(connection, test_table)
     assert isinstance(cursor, sqlite3.Cursor)
     assert cursor.fetchall() == [(10,)]

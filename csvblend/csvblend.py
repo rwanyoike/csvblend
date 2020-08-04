@@ -98,7 +98,7 @@ def select_values(connection, table, columns):
     return connection.execute(query)
 
 
-def count_values(connection, table):
+def select_count(connection, table):
     """Count the values inside a merge table.
 
     :param sqlite3.Connection connection: The database connection.

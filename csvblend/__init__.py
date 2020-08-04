@@ -12,14 +12,14 @@
 Example::
 
     >>> from csvblend import MergeFiles
-    >>> columns = ["a", "b", "c"]
-    >>> indexes = ["a"]
+    >>> columns = ["field1", "field2", "field3"]
+    >>> indexes = ["field1"]
     >>> with MergeFiles(columns, indexes) as mf:
-    ...     with open(file1) as fp:
+    ...     with open("csvfile1") as fp:
     ...         mf.merge(fp)
-    ...     with open(file2) as fp:
+    ...     with open("csvfile2") as fp:
     ...         mf.merge(fp)
-    ...     with open(file3) as fp:
+    ...     with open("csvfile3") as fp:
     ...         mf.merge(fp)
     ...     for row in mf.rows():
     ...         print(row)
