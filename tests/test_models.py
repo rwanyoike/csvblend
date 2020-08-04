@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from csvblend import MergeFiles
+from csvblend import MergeFiles, models
 from csvblend.utils import hash_function
 
 test_columns = ["first_name", "last_name", "score"]
@@ -40,6 +40,16 @@ def test_mergefile___init___with_database(tmp_path: Path):
     test_database = tmp_path / "test.db"
     mf = MergeFiles(test_columns, test_indexes, str(test_database))
     assert mf._db == str(test_database)
+
+
+def test_mergefile___init___sqlite_version(mocker):
+    mocker.patch.object(models.sqlite3, "sqlite_version_info", (3, 23, 1))
+    mocker.patch.object(models.sqlite3, "sqlite_version", "3.23.1")
+    with pytest.raises(
+        Exception,
+        match=r"SQLite 3.24.0 \(2018-06-04\) or later is required \(found 3.23.1\)",
+    ):
+        MergeFiles(test_columns, test_indexes)
 
 
 def test_mergefile___init___exception():
@@ -138,7 +148,7 @@ def test_mergefile_merge_exception():
     mf = MergeFiles(test_columns + ["unknown"], test_indexes)
     for csvfile in csvfiles:
         with pytest.raises(
-            ValueError, match="fieldnames .+ must be a subset of columns"
+            ValueError, match=r"fieldnames .+ must be a subset of columns"
         ):
             mf.merge(io.StringIO(csvfile))
 
