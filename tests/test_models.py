@@ -104,16 +104,14 @@ def test_mergefile_merge_noncontiguous_index():
         f"{test_headers}\n"
         f"Maïlis,和,¥3.11,jvenn0@bloglovin.com,249.156.88.77\n"
         f"Danièle,胡,€7.20,bgorringe1@disqus.com,174.198.123.229\n",
-        f"{test_headers}\n"
-        f"Rachèle,郜,¥9.01,wmerriday2@patch.com,39.135.210.166\n",
+        f"{test_headers}\n" f"Rachèle,郜,¥9.01,wmerriday2@patch.com,39.135.210.166\n",
         f"{test_headers}\n"
         f"Maïlis,和,¥5.46,jvenn0@bloglovin.com,60.23.102.202\n"
         f"Rachèle,郜,¥9.01,wmerriday2@patch.com,39.135.210.166\n",
         f"{test_headers}\n"
         f"Faîtes,胡,£2.61,bgorringe1@disqus.com,185.204.124.234\n"
         f"Stévina,隆,€9.82,zpiwell6@theguardian.com,114.205.62.133\n",
-        f"{test_headers}\n"
-        f"Lyséa,胡,$3.05,bgorringe1@disqus.com,29.168.3.116\n",
+        f"{test_headers}\n" f"Lyséa,胡,$3.05,bgorringe1@disqus.com,29.168.3.116\n",
         f"{test_headers}\n"
         f"Torbjörn,那,¥7.93,cbarke8@ihg.com,232.157.135.140\n"
         f"Lyséa,胡,$3.05,bgorringe1@disqus.com,29.168.3.116\n",

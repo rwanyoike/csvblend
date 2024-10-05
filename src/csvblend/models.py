@@ -118,8 +118,7 @@ class MergeFiles(contextlib.AbstractContextManager):
         cursor = csvblend.select_values(
             self._connection, self._table, list(self._columns)
         )
-        for row in cursor:
-            yield row
+        yield from cursor
 
     def cleanup(self):
         """Cleanup the merge database."""

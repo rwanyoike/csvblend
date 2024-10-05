@@ -108,10 +108,13 @@ def test_select_values(tmp_path: Path):
     connection.execute(f"""
         CREATE TABLE {test_table} ("first_name" TEXT, "last_name" TEXT, "score" TEXT);
     """)
-    connection.executemany(f"""
+    connection.executemany(
+        f"""
         INSERT INTO {test_table} ("first_name", "last_name", "score")
         VALUES (?, ?, ?);
-    """, test_values)
+    """,
+        test_values,
+    )
     cursor = csvblend.select_values(connection, test_table, test_columns)
     assert isinstance(cursor, sqlite3.Cursor)
     assert cursor.fetchall() == test_values
@@ -123,10 +126,13 @@ def test_select_count(tmp_path: Path):
     connection.execute(f"""
         CREATE TABLE {test_table} ("first_name" TEXT, "last_name" TEXT, "score" TEXT);
     """)
-    connection.executemany(f"""
+    connection.executemany(
+        f"""
         INSERT INTO {test_table} ("first_name", "last_name", "score")
         VALUES (?, ?, ?);
-    """, test_values)
+    """,
+        test_values,
+    )
     cursor = csvblend.select_count(connection, test_table)
     assert isinstance(cursor, sqlite3.Cursor)
     assert cursor.fetchall() == [(10,)]
