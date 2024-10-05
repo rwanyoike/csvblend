@@ -1,10 +1,11 @@
 # csvblend: Python CSV Merge Library
 
-[![Travis (.org)](https://img.shields.io/travis/rwanyoike/csvblend-python-library.svg)](https://travis-ci.org/rwanyoike/csvblend-python-library)
-[![Codecov](https://img.shields.io/codecov/c/gh/rwanyoike/csvblend-python-library.svg)](https://codecov.io/gh/rwanyoike/csvblend-python-library)
-[![GitHub](https://img.shields.io/github/license/rwanyoike/csvblend-python-library)](LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/csvblend.svg)](https://pypi.python.org/pypi/csvblend)
-[![Code Style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/rwanyoike/csvblend-python-library/python-package.yml?branch=main)
+](https://github.com/rwanyoike/csvblend-python-library/actions/workflows/python-package.yml?query=branch%3Amain)
+[![GitHub License](https://img.shields.io/github/license/rwanyoike/csvblend-python-library)
+](LICENSE.txt)
+[![PyPI - Version](https://img.shields.io/pypi/v/csvblend)
+](https://pypi.org/project/csvblend)
 
 > Join or merge multiple CSVs.
 
@@ -41,7 +42,7 @@ Basic merge usage:
 - Affected row count (created or updated) -- show changes between CSVs.
 - No external dependencies.
 
-csvblend officially supports Python 3.6+.
+csvblend officially supports Python 3.8+.
 
 ## Installation
 
@@ -55,11 +56,3 @@ $ pip install -U csvblend
 ## Usage
 
 For documentation, see [`./docs/README.md`](./docs/README.md).
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-This project is licensed under the [MIT License](./LICENSE).
